@@ -1,0 +1,13 @@
+{
+  "author": "Michal Miskernik <michal@miskernik.sk>",
+  "name": "sweetwar",
+  "description": "A tower defense game",
+  "version": "0.0.0",
+  "homepage": "http://marshmallowteam.com/sweetwar",
+  "repository": {
+    "url": "https://github.com/MarshmallowTeam/sweetwar.git"
+  },
+  "engines": {
+    "browser": "*"
+  }
+}
