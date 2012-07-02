@@ -1,9 +1,16 @@
 {
-  "author": "Michal Miskernik <michal@miskernik.sk>",
   "name": "sweetwar",
   "description": "A tower defense game",
   "version": "0.0.0",
+  "author": "Michal Miskernik <michal@miskernik.sk>",
   "homepage": "http://marshmallowteam.com/sweetwar",
+  "directories": {
+    "src": "./src"
+  },
+  "dependencies": {
+    "lovejs": "git://github.com/michalmiskernik/lovejs.git",
+    "mallow": "0.2.x"
+  },
   "repository": {
     "url": "https://github.com/MarshmallowTeam/sweetwar.git"
   },
