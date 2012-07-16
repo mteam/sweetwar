@@ -1,30 +1,36 @@
 love = require 'lovejs'
 Vector = require './vectors'
+Path = require './path'
 
 class Enemy
-  constructor: ->
-    @speed = 1
-    @pos = new Vector
-    @step = new Vector
+	love.eventify(this)
 
-  follow: (path) ->
-    @path = path.slice()
-    @pos.update(@path.shift())
+	constructor: ->
+		@speed = 1
+		@pos = new Vector
+		@step = new Vector
+		@path = new Path
 
-  update: (dt) ->
-    if @path.length > 0
-      next = @path[0]
+	trigger: (event, args...) ->
+		@constructor.trigger(event, this, args...)
 
-      @step.update(next).subtract(@pos)
+	follow: (path) ->
+		@path.constructor(path)
+		@pos.update(@path.next)
+		@path.pop()
 
-      if @step.length() < 1
-        @pos.update(next)
-        @path.shift()
-      else
-        @step.normalize().multiply(@speed * dt)
-        @pos.add(@step)
+	update: (dt) ->
+		if next = @path.next
+			@step.update(next).subtract(@pos)
 
-  render: ->
-    love.graphics.circle('fill', @pos.x | 0, @pos.y | 0, 10)
+			if @step.length() < 1
+				@pos.update(next)
+				@path.pop()
+			else
+				@step.normalize().multiply(@speed * dt)
+				@pos.add(@step)
+
+	render: ->
+		love.graphics.circle('fill', @pos.x | 0, @pos.y | 0, 10)
 
 module.exports = Enemy
