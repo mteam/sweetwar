@@ -1,7 +1,6 @@
 love = require 'lovejs'
 gamestate = require './gamestate'
-menu = require './menu'
-game = require './game'
+loader = require './loader'
 
 stats = love.utils.stats()
 
@@ -12,7 +11,11 @@ love.load = ->
 	love.graphics.setCanvas(canvas)
 
 	gamestate.register()
-	gamestate.switch(menu)
+
+	gamestate.init(require('./menu'))
+	gamestate.init(require('./game'))
+
+	gamestate.switch(loader)
 
 love.update = (dt) ->
 	stats.begin()

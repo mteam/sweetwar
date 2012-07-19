@@ -3,9 +3,15 @@ var express = require('express');
 var app = express.createServer();
 var pkg = mallow('./package.json');
 
+app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/sweetwar.js', pkg.server);
+app.get('/*.png', function (req, res, next) {
+  setTimeout(function () {
+    next();
+  }, 3000);
+});
 
 var port = process.argv[2] || 8080;
 
