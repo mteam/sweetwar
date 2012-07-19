@@ -3,7 +3,7 @@ gamestate = require './gamestate'
 game = gamestate.new()
 
 game.init = ->
-	love.assets.addImages(level.image for level in levels)
+	# love.assets.addImages(level.image for level in levels)
 
 levels = [
 	{

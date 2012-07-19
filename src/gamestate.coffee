@@ -23,8 +23,9 @@ callbacks = [
 ]
 
 for name in callbacks
-  gamestate[name] = ->
-    current[name]?(arguments...)
+  do (name) ->
+    gamestate[name] = ->
+      current[name]?(arguments...)
 
 gamestate.register = ->
   for name in callbacks

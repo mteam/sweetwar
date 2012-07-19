@@ -5,11 +5,12 @@ loader = gamestate.new()
 
 loader.enter = ->
   love.assets.load ->
-    gamestate.switch(menu)
+    setTimeout ->
+      gamestate.switch(menu)
+    , 300
 
 loader.draw = ->
   progress = love.assets.getProgress()
-  love.graphics.print("loading...", 100, 100)
-  love.graphics.print("#{progress.loaded}/#{progress.all}", 100, 150)
+  love.graphics.print("loading... (#{progress.loaded}/#{progress.total})", 100, 100)
 
 module.exports = loader
