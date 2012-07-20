@@ -6,11 +6,12 @@ current = null
 gamestate.new = -> {}
 
 gamestate.switch = (to, args...) ->
-  current?.leave?()
-  prev = current
-  gamestate.init(to)
-  current = to
-  current.enter(prev, args...)
+  love.timer.nextTick ->
+    current?.leave?()
+    prev = current
+    gamestate.init(to)
+    current = to
+    current.enter(prev, args...)
 
 gamestate.init = (state) ->
   unless state.__used
