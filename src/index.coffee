@@ -5,25 +5,25 @@ loader = require './loader'
 stats = love.utils.stats()
 
 love.load = ->
-	document.body.appendChild(stats.domElement)
+  document.body.appendChild(stats.domElement)
 
-	canvas = document.getElementById('game')
-	love.graphics.setCanvas(canvas)
+  canvas = document.getElementById('game')
+  love.graphics.setCanvas(canvas)
 
-	gamestate.register()
+  gamestate.register()
 
-	gamestate.init(require('./menu'))
-	gamestate.init(require('./game'))
+  gamestate.init(require('./menu'))
+  gamestate.init(require('./game'))
 
-	gamestate.switch(loader)
+  gamestate.switch(loader)
 
 love.update = (dt) ->
-	stats.begin()
-	gamestate.update(dt)
+  stats.begin()
+  gamestate.update(dt)
 
 love.draw = ->
-	gamestate.draw()
-	stats.end()
+  gamestate.draw()
+  stats.end()
 
 exports.run = ->
-	love.run()
+  love.run()
