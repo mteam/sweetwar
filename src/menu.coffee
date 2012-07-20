@@ -11,6 +11,6 @@ menu.init = ->
   love.assets.add(image for name, image of buttons)
 
 menu.enter = ->
-  console.log('hi!')
+  console.log('entering menu')
 
 module.exports = menu
