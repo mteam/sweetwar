@@ -5,7 +5,9 @@
   <script src="/sweetwar.js"></script>
 </head>
 <body>
-  <canvas id="game" width="600" height="400"></canvas>
+  <div id="game-container">
+    <canvas id="game" width="600" height="400"></canvas>
+  </div>
   <script>
     game = require('sweetwar');
     game.run();

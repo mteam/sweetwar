@@ -5,6 +5,9 @@ game = gamestate.new()
 game.init = ->
   # love.assets.addImages(level.image for level in levels)
 
+game.enter = ->
+  console.log('entering game')
+
 levels = [
   {
     count: 5

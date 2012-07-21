@@ -1,4 +1,5 @@
 love = require 'lovejs'
+gui = require './gui'
 gamestate = require './gamestate'
 loader = require './loader'
 
@@ -9,6 +10,8 @@ love.load = ->
 
   canvas = document.getElementById('game')
   love.graphics.setCanvas(canvas)
+  container = document.getElementById('game-container')
+  gui.setContainer(container)
 
   gamestate.register()
 
