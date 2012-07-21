@@ -8,6 +8,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/sweetwar.js', pkg.server);
 
+app.error(function (err, req, res, next) {
+  res.end('console.error(' + JSON.stringify(err.toString()) + ');');
+});
+
 var port = process.argv[2] || 8080;
 
 app.listen(port);
