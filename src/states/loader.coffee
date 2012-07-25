@@ -1,5 +1,5 @@
 love = require 'lovejs'
-gamestate = require './gamestate'
+gamestate = require '../helpers/gamestate'
 menu = require './menu'
 loader = gamestate.new()
 

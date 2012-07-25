@@ -9,3 +9,5 @@ class Path
 
   empty: ->
     @path.length is 0
+
+module.exports = Path

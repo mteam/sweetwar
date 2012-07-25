@@ -1,6 +1,6 @@
 love = require 'lovejs'
-Enemy = require './enemy'
-gamestate = require './gamestate'
+Enemy = require '../entities/enemy'
+gamestate = require '../helpers/gamestate'
 game = gamestate.new()
 
 game.init = ->

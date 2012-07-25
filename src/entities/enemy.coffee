@@ -1,5 +1,5 @@
 love = require 'lovejs'
-Vector = require './vectors'
+Vector = require '../helpers/vectors'
 Path = require './path'
 
 class Enemy

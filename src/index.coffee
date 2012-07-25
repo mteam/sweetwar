@@ -1,7 +1,7 @@
 love = require 'lovejs'
-gui = require './gui'
-gamestate = require './gamestate'
-loader = require './loader'
+gui = require './helpers/gui'
+gamestate = require './helpers/gamestate'
+loader = require './states/loader'
 
 stats = love.utils.stats()
 
@@ -15,8 +15,8 @@ love.load = ->
 
   gamestate.register()
 
-  gamestate.init(require('./menu'))
-  gamestate.init(require('./game'))
+  gamestate.init(require('./states/menu'))
+  gamestate.init(require('./states/game'))
 
   gamestate.switch(loader)
 

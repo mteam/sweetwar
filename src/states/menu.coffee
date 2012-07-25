@@ -1,6 +1,6 @@
 love = require 'lovejs'
-gui = require './gui'
-gamestate = require './gamestate'
+gui = require '../helpers/gui'
+gamestate = require '../helpers/gamestate'
 menu = gamestate.new()
 game = require './game'
 
