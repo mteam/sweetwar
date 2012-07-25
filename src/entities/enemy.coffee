@@ -5,8 +5,9 @@ Path = require './path'
 class Enemy
   love.eventify(this)
 
-  constructor: ->
-    @speed = 1
+  @speed: 40
+
+  constructor: ({@health, @image, @reward})->
     @pos = new Vector
     @step = new Vector
     @path = new Path
@@ -27,10 +28,10 @@ class Enemy
         @pos.update(next)
         @path.pop()
       else
-        @step.normalize().multiply(@speed * dt)
+        @step.normalize().multiply(Enemy.speed * dt)
         @pos.add(@step)
 
-  render: ->
+  draw: ->
     love.graphics.circle('fill', @pos.x | 0, @pos.y | 0, 10)
 
 module.exports = Enemy
