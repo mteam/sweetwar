@@ -11,7 +11,7 @@ gamestate.switch = (to, args...) ->
     prev = current
     gamestate.init(to)
     current = to
-    current.enter(prev, args...)
+    current.enter(args...)
 
 gamestate.init = (state) ->
   unless state.__used
