@@ -16,7 +16,7 @@ love.load = ->
   gamestate.register()
 
   gamestate.init(require('./states/menu'))
-  gamestate.init(require('./states/game'))
+  gamestate.init(require('./states/level'))
 
   gamestate.switch(loader)
 

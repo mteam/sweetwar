@@ -2,10 +2,10 @@ love = require 'lovejs'
 gui = require '../helpers/gui'
 gamestate = require '../helpers/gamestate'
 menu = gamestate.new()
-game = require './game'
+level = require './level'
 
 buttons =
-  Start: -> gamestate.switch(game)
+  Start: -> gamestate.switch(level)
   Help: -> gamestate.switch(help)
 
 buttonWidth = 100
