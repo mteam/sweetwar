@@ -1,16 +1,15 @@
 var mallow = require('mallow');
 var express = require('express');
-var app = express.createServer();
+var app = express();
 var pkg = mallow('./package.json');
 
 app.use(app.router);
-app.use(express.static(__dirname + '/public'));
-
-app.get('/sweetwar.js', pkg.server);
-
-app.error(function (err, req, res, next) {
+app.use(express.static('public'));
+app.use(function (err, req, res, next) {
   res.end('console.error(' + JSON.stringify(err.toString()) + ');');
 });
+
+app.get('/sweetwar.js', pkg.server);
 
 var port = process.argv[2] || 8080;
 

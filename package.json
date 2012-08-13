@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "lovejs": "git://github.com/michalmiskernik/lovejs.git",
-    "mallow": "0.2.x"
+    "mallow": "0.2.x",
+    "express": "3.x.x"
   },
   "repository": {
     "url": "https://github.com/MarshmallowTeam/sweetwar.git"
