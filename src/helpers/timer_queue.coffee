@@ -33,4 +33,5 @@ class Queue
       @timer -= @interval
       @trigger('pop', @queue.shift()) if @queue.length > 0
 
-module.exports = Queue
+exports.new = (interval) ->
+  new Queue(interval)

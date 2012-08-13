@@ -1,6 +1,6 @@
 love = require 'lovejs'
 Enemy = require '../entities/enemy'
-TimerQueue = require '../helpers/timer_queue'
+queue = require '../helpers/timer_queue'
 gamestate = require '../helpers/gamestate'
 list = require '../helpers/linked_list'
 level = gamestate.new()
@@ -14,7 +14,7 @@ level.reset = ->
   level.enemies = list.new()
   level.towers = list.new()
 
-  level.queue = new TimerQueue(2)
+  level.queue = queue.new(2)
   level.queue.on('pop', (fn) -> fn())
 
 level.enter = ->
